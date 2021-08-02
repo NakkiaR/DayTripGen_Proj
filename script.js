@@ -1,13 +1,18 @@
 "use strict";
 
 //Welcome
-//function welcomeMessage() {
+function welcomeMessage() {
+    let message = "";
+    message = "Welcome!";
+}   
 let userName = prompt("Welcome to the online day trip planner. Please enter your first name.");
 alert ("Hello " + userName + "!" + " Let's get started with planning your day trip!");
-//}
 
 //Destination
-//function getDayTrip() {
+function getDayTrip() {
+    let dayTrip = "";
+    return dayTrip;
+}
 let myDayTrip = ["Sedona", "Flagstaff", "Phoenix"];
 let dayTripDestination = myDayTrip[Math.floor(Math.random() * myDayTrip.length)];
 alert ("City: " + dayTripDestination);
@@ -15,7 +20,7 @@ alert ("City: " + dayTripDestination);
 // if(userInput == "yes") {
 //     alert ("Great! Next-Let's grab your transportation!");
 console.log("You are going to " + dayTripDestination);
-// }
+
 // else {
 // alert ("Okay, No worries! Please refresh the page to grab another option.");
 
@@ -24,7 +29,10 @@ console.log("You are going to " + dayTripDestination);
 //}
 
 //Transportation
-//function getTripTransportation() {
+function getTripTransportation() {
+    let tripTransportation = "";
+    return tripTransportation;
+}
 let myTripTransportation = ["car", "bus", "Uber"];
 let tripTransportation = myTripTransportation[Math.floor(Math.random() * myTripTransportation.length)];
 alert ("Mode of transportation: " + tripTransportation);
@@ -40,7 +48,10 @@ console.log("Your mode of transportation will be by " + tripTransportation);
 //}
 
 //Restaurant
-//function getTripRestaurant() {
+function getTripRestaurant() {
+let tripRestaurant = "";
+return tripRestaurant;
+}
 if(dayTripDestination == "Sedona") {
     let myRestaurantSedona = ["Casa Sedona Restaurant", "Mesa Grill Sedona", "Creekside American Bistro"];
     let tripRestaurant;
@@ -73,7 +84,10 @@ if(dayTripDestination == "Sedona") {
 //}
 
 //Entertainment
-//function getTripEntertainment() {
+function getTripEntertainment() {
+let tripEntertainment = "";
+return tripEntertainment;
+}
 if(dayTripDestination === "Sedona") {
     let myEntertainmentSedona = ["Mary D. Fisher Theater", "Vino Di Sedona", "Sedona UFO Vortex Tours"];
     let tripEntertainment;
