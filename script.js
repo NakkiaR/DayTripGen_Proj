@@ -14,36 +14,20 @@ function getDayTrip() {
     return dayTrip;
 }
 let myDayTrip = ["Sedona", "Flagstaff", "Phoenix"];
-//for(let i = 0; i < 3; i++) {
 let dayTripDestination = myDayTrip[Math.floor(Math.random() * myDayTrip.length)];
 alert ("City: " + dayTripDestination);
-//let userInput = prompt("Would you like to go to this city? Type, 'yes' or 'no' below.");
-//if(userInput == "yes") {
-    //alert ("Great! Next-Let's grab your transportation!");
     console.log("You are going to " + dayTripDestination);
-    //}
-//else if(userInput == "no") {
-//}
-//}
-
+ 
 //Transportation
 function getTripTransportation() {
     let tripTransportation = "";
     return tripTransportation;
 }
 let myTripTransportation = ["personal car", "party bus", "Uber"];
-//for(let i = 0; i < 3; i++) {
 let tripTransportation = myTripTransportation[Math.floor(Math.random() * myTripTransportation.length)];
 alert ("Mode of transportation: " + tripTransportation);
-//let userInput = prompt("Would you like to keep this mode of transportation? Type, 'yes' or 'no' below.");
-//if(userInput == "yes") {
-    //alert ("Fantastic! Next-Let's find some food!");
+
     console.log("Your mode of transportation will be by " + tripTransportation);
-    //break;
-// }
-// else if(userInput == "no") {
-// }
-// }
 
 //Restaurant
 function getTripRestaurant() {
@@ -52,19 +36,11 @@ return tripRestaurant;
 }
 if(dayTripDestination == "Sedona") {
     let myRestaurantSedona = ["Casa Sedona Restaurant", "Mesa Grill Sedona", "Creekside American Bistro"];
-    //for(let i = 0; i < 3; i++) {
     let tripRestaurant;
     tripRestaurant = myRestaurantSedona[Math.floor(Math.random() * myRestaurantSedona.length)];
     alert ("Restaurant: " + tripRestaurant);
-    //      userInput = prompt("Does this sound good? Type, 'yes' or 'no' below.");
-    // if(userInput == "yes") {
-    //     alert ("Great choice! Finally-Let's find some entertainment!");
+    
         console.log("Your place of grub will be" + tripRestaurant);
-//     break;
-// }
-// else if(userInput == "no") {
-// }
-// }
 }
     else if(dayTripDestination === "Flagstaff") {
         let myRestaurantFlagstaff = ["Big Canyon BBQ ", "MartAnnes Burrito Palace", "Fat Olives"];
@@ -109,7 +85,10 @@ console.log("Your place of entertainment is " + tripEntertainment);
 }
 
 //Confirmation
-//function confirmTrip() {
+function confirmTrip() {
+    confirmTrip = "";
+    return tripConfirmation;
+    }
 let userInput = prompt("Review the selections below. Would you like to keep this day trip? Type, 'yes' or 'no' below.");
 if(userInput == "yes") {
 alert ("Great! Enjoy your day trip!");
