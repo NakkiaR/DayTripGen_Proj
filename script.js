@@ -99,28 +99,7 @@ let entertainment = ["True Escape if You Can Room ", "Don't Slip Bowling Lanes "
         alert ("Entertainment: " + userAcceptsEntertainment + " Congratulations! Now, let's get your trip confirmed so you can get to having some fun!");
         console.log("You are going to " + userAcceptsEntertainment);
 
-// Confirmation
-// let newTrip = getDayTrip(newDayTrip);
-// console.log(newTrip);
-// let confirmTrip = getDayTrip(confirmMyTrip);
-
-//     function getDayTrip(confirmTrip) {
-//         return getDayTrip = (confirmTrip);    
-//     }   
-//     let userAcceptsTrip = getDayTrip(confirmTrip);
-//     let userAccepts5 = false;
-//     while (userAccepts5 === false) {
-//         alert(userAcceptsTrip);
-//         let userInput = prompt("Review your selections: " + "You are traveling to " + userAcceptsDestination + " by " + userAcceptsTransportation + "where you'll enjoy fine cuisine at " + userAcceptsRestaurant + ", and enjoy the experince of " + userAcceptsEntertainment + "." + " Would you like to keep this day trip? Type, 'yes' to confirm or 'no' if you would like to start over.");
-//         if (userInput === "no") {
-//             userAcceptsTrip = getDayTrip(confirmTrip);
-//         } else {
-//             userAccepts5 = true;
-//         }
-//     }
-//     alert ("Congratulations! You have confirmed your destination! Print your itinerary. Enjoy your trip!");    
-
-let userInput = prompt("Review your selections: " + "You are traveling to " + userAcceptsDestination + " by " + userAcceptsTransportation + "where you'll enjoy fine cuisine at " + userAcceptsRestaurant + ", and enjoy the experince of " + userAcceptsEntertainment + "." + " Would you like to keep this day trip? Type, 'yes' to confirm or refresh if you would like to start over.");
+    let userInput = prompt("Review your selections: " + "You are traveling to " + userAcceptsDestination + " by " + userAcceptsTransportation + "where you'll enjoy fine cuisine at " + userAcceptsRestaurant + ", and enjoy the experince of " + userAcceptsEntertainment + "." + " Would you like to keep this day trip? Type, 'yes' to confirm or refresh if you would like to start over.");
 
     function getNewTrip(newDayTrip) {
         getDayTrip = (newDayTrip);    
