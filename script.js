@@ -1,100 +1,129 @@
 "use strict";
 
 //Welcome
-function welcomeMessage() {
-    let message = "";
-    message = "Welcome!";
+function welcomeMessage(message) {
+    message = "";
+    return message;
 }   
-let userName = prompt("Welcome to the online day trip planner. Please enter your first name.");
-alert ("Hi " + userName + "!" + " Let's get started with planning your day trip!");
+let userName = prompt("Welcome to the online day trip planner. Please enter your first name to get started.");
+alert ("Hi " + userName + "!" + " Let's get started with planning your day trip!    You will receive prompts to select different options to plan your trip. You'll book the city, mode of transportation, restaurant, and entertainment.     You will have the opportunity to confirm or change your trip throughout.    Let's begin! --- Please note: This is a random generator, meaning you may see the same items being displayed multiple times.");
 
 //Destination
-function getDayTrip() {
-    let dayTrip = "";
-    return dayTrip;
-}
-let myDayTrip = ["Sedona", "Flagstaff", "Phoenix"];
-let dayTripDestination = myDayTrip[Math.floor(Math.random() * myDayTrip.length)];
-alert ("City: " + dayTripDestination);
-    console.log("You are going to " + dayTripDestination);
- 
-//Transportation
-function getTripTransportation() {
-    let tripTransportation = "";
-    return tripTransportation;
-}
-let myTripTransportation = ["personal car", "party bus", "Uber"];
-let tripTransportation = myTripTransportation[Math.floor(Math.random() * myTripTransportation.length)];
-alert ("Mode of transportation: " + tripTransportation);
 
-    console.log("Your mode of transportation will be by " + tripTransportation);
+let locations = ["Sedona ", "Flagstaff ", "Phoenix ", "Tucson ", "Tombstone ", "Grand Canyon "];
+
+function getDayTrip(myDayTrip) {
+    return myDayTrip = myDayTrip[Math.floor(Math.random() * myDayTrip.length)];
+}
+let userAcceptsDestination = getDayTrip(locations);
+
+let userAccepts = false;
+while (userAccepts === false) {
+    alert(userAcceptsDestination);
+    let userInput1 = prompt("Would you like to go to " + userAcceptsDestination + "? Enter 'yes' to confirm this destination or 'no' to select a different one."); 
+    if (userInput1 === "no") {
+        userAcceptsDestination = getDayTrip(locations);
+    } else {
+    userAccepts = true;
+    }
+}
+    alert ("City: " + userAcceptsDestination + " Next, let's choose your mode of transportation!");
+    console.log("You are going to " + userAcceptsDestination);
+
+
+//Transportation
+
+let transportation = ["Personal Car ", "Party Bus ", "Uber ", "Limo ", "Plane ", "Cruiser "];
+
+    function getTripTransportation(myDayTransport) {
+        return myDayTransport[Math.floor(Math.random() * myDayTransport.length)];
+    }
+    let userAcceptsTransportation = getTripTransportation(transportation);
+    
+    let userAccepts2 = false;
+    while (userAccepts2 === false) {
+        alert(userAcceptsTransportation);
+        let userInput1 = prompt("Would you like to go by " + userAcceptsTransportation + "? Enter 'yes' to confirm this transportation or 'no' to select a different one."); 
+        if (userInput1 === "no") {
+            userAcceptsTransportation = getTripTransportation(transportation);
+        } else {
+        userAccepts2 = true;
+        }
+    }
+        alert ("Mode of transportation: " + userAcceptsTransportation + " Next, let's choose your restaurant!");
+        console.log("You are going by " + userAcceptsTransportation);
+
 
 //Restaurant
-function getTripRestaurant() {
-let tripRestaurant = "";
-return tripRestaurant;
-}
-if(dayTripDestination == "Sedona") {
-    let myRestaurantSedona = ["Casa Sedona Restaurant", "Mesa Grill Sedona", "Creekside American Bistro"];
-    let tripRestaurant;
-    tripRestaurant = myRestaurantSedona[Math.floor(Math.random() * myRestaurantSedona.length)];
-    alert ("Restaurant: " + tripRestaurant);
+
+let restaurants = ["Micky and D's ", "Burgers are King ", "Dairy Farm Queen ", "Jack's Lunch Box ", "Wendel's Restaurant ", "The Express Panda "];
+
+    function getTripRestaurant(myRestaurant) {
+        return myRestaurant[Math.floor(Math.random() * myRestaurant.length)];
+    }
+    let userAcceptsRestaurant = getTripRestaurant(restaurants);
     
-        console.log("Your place of grub will be" + tripRestaurant);
-}
-    else if(dayTripDestination === "Flagstaff") {
-        let myRestaurantFlagstaff = ["Big Canyon BBQ ", "MartAnnes Burrito Palace", "Fat Olives"];
-        let tripRestaurant;
-        tripRestaurant = myRestaurantFlagstaff[Math.floor(Math.random() * myRestaurantFlagstaff.length)];
-        alert ("Restaurant: " + tripRestaurant);
-    console.log("Your place of chow will be " + tripRestaurant);
-}
-    else if(dayTripDestination === "Phoenix") {
-        let myRestaurantPhoenix = ["Kaizen", "Character Distinctive Dining", "Blue Hound Kitchen & Cocktails"];
-        let tripRestaurant;
-        tripRestaurant = myRestaurantPhoenix[Math.floor(Math.random() * myRestaurantPhoenix.length)];
-        alert ("Restaurant: " + tripRestaurant);
-    console.log("Your place of yum will be " + tripRestaurant);
-}
+    let userAccepts3 = false;
+    while (userAccepts3 === false) {
+        alert(userAcceptsRestaurant);
+        let userInput1 = prompt("Would you like to est at " + userAcceptsRestaurant + "? Enter 'yes' to confirm this restaurant or 'no' to select a different one."); 
+        if (userInput1 === "no") {
+            userAcceptsRestaurant = getTripRestaurant(restaurants);
+        } else {
+        userAccepts3 = true;
+        }
+    }
+        alert ("Restaurant: " + userAcceptsRestaurant + " Last, but certainly not least, let's choose your entertainment!");
+        console.log("You are eating at " + userAcceptsRestaurant);
+
 
 //Entertainment
-function getTripEntertainment() {
-let tripEntertainment = "";
-return tripEntertainment;
-}
-if(dayTripDestination === "Sedona") {
-    let myEntertainmentSedona = ["Mary D. Fisher Theater", "Vino Di Sedona", "Sedona UFO Vortex Tours"];
-    let tripEntertainment;
-    tripEntertainment = myEntertainmentSedona[Math.floor(Math.random() * myEntertainmentSedona.length)];
-    alert ("Entertainment: " + tripEntertainment);
-console.log("Your place of entertainment is " + tripEntertainment);
-}
-else if(dayTripDestination === "Flagstaff") {
-    let myEntertainmentFlagstaff = ["Escape Rooms Flagstaff", "Starlite Lanes", "Orpheum Theater"];
-    let tripEntertainment;
-    tripEntertainment = myEntertainmentFlagstaff[Math.floor(Math.random() * myEntertainmentFlagstaff.length)];
-    alert ("Entertainment: " + tripEntertainment);
-console.log("Your place of entertainment is " + tripEntertainment);
-}
-else if(dayTripDestination === "Phoenix") {
-    let myEntertainmentPhoenix = ["FilmBar", "Copper Blues Rock Pub & Kitchen", "Cobra Arcade Bar"];
-    let tripEntertainment;
-    tripEntertainment = myEntertainmentPhoenix[Math.floor(Math.random() * myEntertainmentPhoenix.length)];
-    alert ("Entertainment: " + tripEntertainment);
-console.log("Your place of entertainment is " + tripEntertainment);
-}
 
-//Confirmation
-function confirmTrip() {
-    confirmTrip = "";
-    return tripConfirmation;
+let entertainment = ["True Escape if You Can Room ", "Don't Slip Bowling Lanes ", "Real Snakes Arcade Bar ", "Fall from the Sky - Sky Dive Center ", "Broken Bungie - Cliff Jumping ", "Scorching Heat Desert Tours"];
+
+    function getTripEntertainment(myEntertainment) {
+        return myEntertainment[Math.floor(Math.random() * myEntertainment.length)];
     }
-let userInput = prompt("Review the selections below. Would you like to keep this day trip? Type, 'yes' or 'no' below.");
-if(userInput == "yes") {
-alert ("Great! Enjoy your day trip!");
-}
-else {
-        alert ("Okay, No worries! Just hit that refresh icon to start over.");
-}
-//}
-//}
+    let userAcceptsEntertainment = getTripEntertainment(entertainment);
+    
+    let userAccepts4 = false;
+    while (userAccepts4 === false) {
+        alert(userAcceptsEntertainment);
+        let userInput1 = prompt("Would you like to experience " + userAcceptsEntertainment + "? Enter 'yes' to confirm this entertainment venue or 'no' to select a different one."); 
+        if (userInput1 === "no") {
+            userAcceptsEntertainment = getTripEntertainment(entertainment);
+        } else {
+        userAccepts4 = true;
+        }
+    }
+        alert ("Entertainment: " + userAcceptsEntertainment + " Congratulations! Now, let's get your trip confirmed so you can get to having some fun!");
+        console.log("You are going to " + userAcceptsEntertainment);
+
+// Confirmation
+// let newTrip = getDayTrip(newDayTrip);
+// console.log(newTrip);
+// let confirmTrip = getDayTrip(confirmMyTrip);
+
+//     function getDayTrip(confirmTrip) {
+//         return getDayTrip = (confirmTrip);    
+//     }   
+//     let userAcceptsTrip = getDayTrip(confirmTrip);
+//     let userAccepts5 = false;
+//     while (userAccepts5 === false) {
+//         alert(userAcceptsTrip);
+//         let userInput = prompt("Review your selections: " + "You are traveling to " + userAcceptsDestination + " by " + userAcceptsTransportation + "where you'll enjoy fine cuisine at " + userAcceptsRestaurant + ", and enjoy the experince of " + userAcceptsEntertainment + "." + " Would you like to keep this day trip? Type, 'yes' to confirm or 'no' if you would like to start over.");
+//         if (userInput === "no") {
+//             userAcceptsTrip = getDayTrip(confirmTrip);
+//         } else {
+//             userAccepts5 = true;
+//         }
+//     }
+//     alert ("Congratulations! You have confirmed your destination! Print your itinerary. Enjoy your trip!");    
+
+let userInput = prompt("Review your selections: " + "You are traveling to " + userAcceptsDestination + " by " + userAcceptsTransportation + "where you'll enjoy fine cuisine at " + userAcceptsRestaurant + ", and enjoy the experince of " + userAcceptsEntertainment + "." + " Would you like to keep this day trip? Type, 'yes' to confirm or refresh if you would like to start over.");
+
+    function getNewTrip(newDayTrip) {
+        getDayTrip = (newDayTrip);    
+        }   
+        console.log ("Congratulations! You have confirmed your destination!");
+    alert ("Congratulations! You have confirmed your destination! Print your itinerary. Enjoy your trip!");    
